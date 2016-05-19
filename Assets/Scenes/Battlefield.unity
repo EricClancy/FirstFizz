@@ -94,11 +94,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 422690, guid: 9e68acfeb9a0f4040af7aa1dbfb64ac3, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -5.59
+      value: -4.9
       objectReference: {fileID: 0}
     - target: {fileID: 422690, guid: 9e68acfeb9a0f4040af7aa1dbfb64ac3, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.74
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 422690, guid: 9e68acfeb9a0f4040af7aa1dbfb64ac3, type: 2}
       propertyPath: m_LocalPosition.z
@@ -124,9 +124,65 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 11437662, guid: 9e68acfeb9a0f4040af7aa1dbfb64ac3, type: 2}
+      propertyPath: groundCheck
+      value: 
+      objectReference: {fileID: 1093292332}
+    - target: {fileID: 11437662, guid: 9e68acfeb9a0f4040af7aa1dbfb64ac3, type: 2}
+      propertyPath: whatIsGround.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 11437662, guid: 9e68acfeb9a0f4040af7aa1dbfb64ac3, type: 2}
+      propertyPath: jumpStrength
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 11437662, guid: 9e68acfeb9a0f4040af7aa1dbfb64ac3, type: 2}
+      propertyPath: moveSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 6031048, guid: 9e68acfeb9a0f4040af7aa1dbfb64ac3, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 9e68acfeb9a0f4040af7aa1dbfb64ac3, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &850979291 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 192952, guid: 9e68acfeb9a0f4040af7aa1dbfb64ac3, type: 2}
+  m_PrefabInternal: {fileID: 729991568}
+--- !u!61 &850979293
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 850979291}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: -0.31, y: 2.35}
+  serializedVersion: 2
+  m_Size: {x: 3.41, y: 5.09}
+--- !u!4 &850979295 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 422690, guid: 9e68acfeb9a0f4040af7aa1dbfb64ac3, type: 2}
+  m_PrefabInternal: {fileID: 729991568}
+--- !u!50 &850979296
+Rigidbody2D:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 850979291}
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1 &944608798
 GameObject:
   m_ObjectHideFlags: 0
@@ -137,7 +193,7 @@ GameObject:
   - 4: {fileID: 944608799}
   - 212: {fileID: 944608801}
   - 61: {fileID: 944608800}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: brown-02 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -151,8 +207,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 944608798}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.5447345, y: -3.6823764, z: 0}
-  m_LocalScale: {x: 0.20205823, y: 0.26844114, z: 1}
+  m_LocalPosition: {x: -6.5447345, y: -5.68, z: 0}
+  m_LocalScale: {x: 0.20205823, y: 0.42292708, z: 1}
   m_Children: []
   m_Father: {fileID: 2138868257}
   m_RootOrder: 1
@@ -200,6 +256,33 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!1 &1093292331
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1093292332}
+  m_Layer: 0
+  m_Name: GroundCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1093292332
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1093292331}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 3.0551884, y: 2.6084514, z: 1}
+  m_Children: []
+  m_Father: {fileID: 850979295}
+  m_RootOrder: 0
 --- !u!1 &1200417919
 GameObject:
   m_ObjectHideFlags: 0
@@ -268,7 +351,7 @@ GameObject:
   - 4: {fileID: 1398867225}
   - 212: {fileID: 1398867227}
   - 61: {fileID: 1398867226}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: brown-02 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -341,7 +424,7 @@ GameObject:
   - 4: {fileID: 1667176105}
   - 212: {fileID: 1667176107}
   - 61: {fileID: 1667176106}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: brown-02 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -355,8 +438,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1667176104}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.135265, y: -3.5723763, z: 0}
-  m_LocalScale: {x: 0.19442797, y: 0.2561782, z: 1}
+  m_LocalPosition: {x: 8.135265, y: -5.74, z: 0}
+  m_LocalScale: {x: 0.19442797, y: 0.42353797, z: 1}
   m_Children: []
   m_Father: {fileID: 2138868257}
   m_RootOrder: 2
@@ -414,7 +497,7 @@ GameObject:
   - 4: {fileID: 1766918654}
   - 212: {fileID: 1766918656}
   - 61: {fileID: 1766918655}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: brown-02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -487,7 +570,7 @@ GameObject:
   - 4: {fileID: 1881419072}
   - 212: {fileID: 1881419074}
   - 61: {fileID: 1881419073}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: brown-02 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -560,7 +643,7 @@ GameObject:
   - 4: {fileID: 2020195856}
   - 212: {fileID: 2020195858}
   - 61: {fileID: 2020195857}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: brown-02 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -683,7 +766,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 6.23
+  orthographic size: 8.293045
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -717,7 +800,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 2138868257}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Terrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
